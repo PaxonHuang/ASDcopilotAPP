@@ -22,11 +22,11 @@ import {
   Calendar
 } from 'lucide-react';
 
-// --- 类型定义 ---
-type Tab = 'home' | 'ai' | 'school' | 'profile';
+// --- 类型定义（已移除 TS 注解以兼容纯 JS 环境） ---
+// Tab values: 'home' | 'ai' | 'school' | 'profile'
 
 const WeChatMiniProgramPrototype = () => {
-  const [activeTab, setActiveTab] = useState<Tab>('home');
+  const [activeTab, setActiveTab] = useState('home');
 
   // --- 模拟数据 ---
   const [tasks, setTasks] = useState([
@@ -167,7 +167,7 @@ const WeChatMiniProgramPrototype = () => {
       { id: 1, role: 'ai', text: '您好，我是您的AI育儿顾问。您可以问我关于家庭干预技巧、情绪处理或IEP解读的问题。' },
     ]);
     const [input, setInput] = useState('');
-    const endRef = useRef<HTMLDivElement>(null);
+    const endRef = useRef(null);
 
     const handleSend = () => {
       if(!input.trim()) return;
